@@ -13,6 +13,7 @@ export function Footer() {
       { name: 'Blog', href: 'https://www.qikqiak.com' },
       { name: 'JoyGames', href: 'https://www.joygames.io'},
       { name: 'SprunkiGame', href: 'https://sprunkigame.top' },
+      { name: 'ToMarkdown', href: 'https://www.tomarkdown.org' },
     ],
     community: [
       { name: t('links.github'), href: 'https://github.com/anthropics/mcp' },

@@ -10,10 +10,10 @@ export function Footer() {
   const navigation = {
     product: [
       { name: 'Documentation', href: '/docs' as keyof Pathnames },
-      { name: 'Blog', href: 'https://www.qikqiak.com' },
+      { name: 'Fastclass', href: 'https://fastclass.cn' },
       { name: 'JoyGames', href: 'https://www.joygames.io'},
-      { name: 'SprunkiGame', href: 'https://sprunkigame.top' },
       { name: 'ToMarkdown', href: 'https://www.tomarkdown.org' },
+      { name: 'Manus AI', href: 'https://www.manusai.io' },
     ],
     community: [
       { name: t('links.github'), href: 'https://github.com/anthropics/mcp' },

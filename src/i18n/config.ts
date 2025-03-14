@@ -1,4 +1,4 @@
-export const locales = ['en', 'zh'] as const
+export const locales = ['en', 'zh', 'tw'] as const
 export type Locale = typeof locales[number]
 
 export const defaultLocale = 'en' as const
@@ -19,4 +19,5 @@ export type Pathnames = typeof pathnames
 export const languages = {
   en: 'English',
   zh: '中文',
-} as const 
+  tw: '繁體中文',
+} as const

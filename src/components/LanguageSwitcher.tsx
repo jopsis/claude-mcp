@@ -13,11 +13,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
 import { Globe } from "lucide-react"
-
-const languages = {
-  en: 'English',
-  zh: '中文',
-} as const
+import { languages } from "@/i18n/config"
 
 type LanguageCode = keyof typeof languages
 

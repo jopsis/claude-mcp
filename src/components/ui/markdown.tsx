@@ -43,7 +43,7 @@ export function Markdown({ content = '' }: MarkdownProps) {
       if (!rawContent) return '';  
 
       // 首先对整个内容进行 HTML 实体解码
-      let decodedContent = decodeHtmlEntities(rawContent);
+      const decodedContent = decodeHtmlEntities(rawContent);
 
       const mermaidDiagrams: Array<{id: string, code: string}> = [];
       

@@ -2,9 +2,10 @@
 
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/routing';
+import { Link as I18nLink } from '@/i18n/routing';
+import Link from 'next/link';
 import { Button } from "@/components/ui/button";
-import { Book } from 'lucide-react';
+import { Book,Video } from 'lucide-react';
 
 const container = {
   hidden: { opacity: 0 },
@@ -73,10 +74,16 @@ export function HeroSection() {
             className="flex items-center justify-center gap-6 pt-4"
             variants={item}
           >
-            <Link href="/docs">
+            <I18nLink href="/docs">
               <Button variant="default" size="lg" className="h-12 px-6 text-base hover-card">
                 {t('hero.documentation')}
                 <Book className="ml-2" />
+              </Button>
+            </I18nLink>
+            <Link href="https://fastclass.cn/course/mcp">
+              <Button variant="default" size="lg" className="h-12 px-6 text-base hover-card">
+                {t('hero.videoCourse')}
+                <Video className="ml-2" />
               </Button>
             </Link>
           </motion.div>

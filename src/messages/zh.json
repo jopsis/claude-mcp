@@ -45,7 +45,8 @@
         "title": "统一的模型上下文交互协议",
         "description": "MCP（Model Context Protocol）是 Claude 定制的一个开放的协议标准，用于在AI模型和开发环境之间建立统一的上下文交互，让AI更好地理解和处理代码",
         "getStarted": "开始使用",
-        "documentation": "查看文档"
+        "documentation": "查看文档",
+        "videoCourse": "视频课程"
       },
       "overview": {
         "title": "为什么选择 MCP?",

@@ -31,7 +31,8 @@
       "title": "Unified Model Context Interaction Protocol",
       "description": "MCP (Model Context Protocol) is an open protocol standard customized by Claude for establishing unified context interaction between AI models and development environments, enabling AI to better understand and process code",
       "getStarted": "Get Started",
-      "documentation": "View Documentation"
+      "documentation": "View Documentation",
+      "videoCourse": "Video Course"
     },
     "overview": {
       "title": "Why Choose MCP?",

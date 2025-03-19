@@ -11,6 +11,10 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning>
+      <head>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5376999672787220"
+          crossOrigin="anonymous"></script>
+      </head>
       <body className={inter.className} suppressHydrationWarning>
         {children}
         <GoogleAnalytics gaId="G-JBQK9CPP1N" />

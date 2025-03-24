@@ -65,8 +65,6 @@ export function Markdown({ content = '' }: MarkdownProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  console.log("Markdown组件收到content长度:", content?.length);
-
   // 尝试解析frontmatter（处理一些文档可能带有frontmatter头信息的情况）
   useEffect(() => {
     // 验证内容类型

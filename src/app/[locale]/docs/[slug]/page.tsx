@@ -93,18 +93,15 @@ export default async function DocPage({ params }: PageProps) {
   const docList = await getDocList(locale);
 
   // 3. 查找当前文档和前后文档
-  let currentDoc: undefined | DocMeta = undefined;
   let prevDoc: undefined | DocMeta = undefined;
   let nextDoc: undefined | DocMeta = undefined;
 
   if (docList && Object.keys(docList).length > 0) {
     // 在所有章节中查找当前文档
     for (const [section, docs] of Object.entries(docList)) {
-      console.log("section", section);
+      console.log("section:", section);
       const found = docs.find(doc => doc.slug === slug);
       if (found) {
-        currentDoc = found;
-        
         // 如果指定了前一篇文档，查找它
         if (found.prev) {
           for (const sectionDocs of Object.values(docList)) {
@@ -131,10 +128,6 @@ export default async function DocPage({ params }: PageProps) {
       }
     }
   }
-
-  console.log("currentDoc", currentDoc);
-  console.log("prevDoc", prevDoc);
-  console.log("nextDoc", nextDoc);
 
   if (error) {
     return (

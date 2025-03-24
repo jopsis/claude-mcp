@@ -807,7 +807,8 @@
       },
     "nav": {
       "getting_started": "入門指南",
-      "write_server": "MCP 伺服器",
+      "typescript": "TypeScript",
+      "python": "Python",
       "guides": "使用指南",
       "advanced": "進階主題",
       "previous": "上一節",
@@ -820,6 +821,7 @@
         "quickstart": "快速開始",
         "getting_started": "入門指南",
         "write-ts-server": "MCP 伺服器",
+        "write-ts-client": "MCP 客戶端",
         "resources": "資源管理",
         "tools": "工具使用",
         "messages": "訊息處理",

@@ -812,7 +812,8 @@
       },
       "nav": {
         "getting_started": "Getting Started",
-        "write_server": "MCP Server",
+        "typescript": "TypeScript",
+        "python": "Python",
         "guides": "Guides",
         "advanced": "Advanced Topics",
         "previous": "Previous",
@@ -825,6 +826,7 @@
           "quickstart": "Quick Start",
           "getting_started": "Getting Started",
           "write-ts-server": "MCP Server",
+          "write-ts-client": "MCP Client",
           "resources": "Resource Management",
           "tools": "Tools Usage",
           "messages": "Message Handling",

@@ -1,9 +1,10 @@
 ---
-title: 編寫 MCP 伺服器（TypeScript）
+title: 編寫 MCP 伺服器
 description: 如何編寫我們的第一個 TypeScript MCP 伺服器
-section: write_server
+section: typescript
 prev: quickstart
 pubDate: 2024-12-03
+order: 1
 ---
 
 # 編寫一個 TypeScript MCP 伺服器

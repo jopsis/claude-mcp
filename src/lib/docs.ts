@@ -11,6 +11,7 @@ export interface DocMeta {
   prev?: string;
   next?: string;
   lastModified?: string;
+  order?: number;
 }
 
 export interface DocContent extends DocMeta {
@@ -65,6 +66,7 @@ export async function getDocList(locale: string = 'en'): Promise<Record<string, 
           if (data.lastModified) docMeta.lastModified = data.lastModified;
           if (data.prev) docMeta.prev = data.prev;
           if (data.next) docMeta.next = data.next;
+          if (data.order) docMeta.order = parseInt(data.order, 10);
           
           docs.push(docMeta);
         } catch (err) {
@@ -96,6 +98,21 @@ export async function getDocList(locale: string = 'en'): Promise<Record<string, 
         acc[section].push(doc);
         return acc;
       }, {} as Record<string, DocMeta[]>);
+      
+      // 对每个章节内的文档按order字段排序
+      Object.keys(grouped).forEach(section => {
+        grouped[section].sort((a, b) => {
+          // 如果有order字段，按order排序
+          if (a.order !== undefined && b.order !== undefined) {
+            return a.order - b.order;
+          }
+          // 如果只有一个有order字段，有order的排前面
+          if (a.order !== undefined) return -1;
+          if (b.order !== undefined) return 1;
+          // 否则按标题字母顺序排序
+          return a.title.localeCompare(b.title);
+        });
+      });
     } catch (reduceError) {
       console.error(`分组文档时出错:`, reduceError);
       
@@ -109,7 +126,34 @@ export async function getDocList(locale: string = 'en'): Promise<Record<string, 
       return { general: [] };
     }
     
-    return grouped;
+    // 定义章节排序顺序
+    const sectionOrder = [
+      'getting_started',
+      'write_server',
+      'guides',
+      'advanced',
+      'general'
+    ];
+    
+    // 创建一个按预定义顺序排序的新对象
+    const orderedGrouped: Record<string, DocMeta[]> = {};
+    
+    // 首先添加预定义顺序中的章节
+    sectionOrder.forEach(section => {
+      if (grouped[section]) {
+        orderedGrouped[section] = grouped[section];
+      }
+    });
+    
+    // 然后添加任何未在预定义顺序中的章节（按字母顺序）
+    Object.keys(grouped)
+      .filter(section => !sectionOrder.includes(section))
+      .sort()
+      .forEach(section => {
+        orderedGrouped[section] = grouped[section];
+      });
+    
+    return orderedGrouped;
   } catch (error) {
     console.error(`Failed to get doc list for locale ${locale}:`, error);
     return { general: [] };

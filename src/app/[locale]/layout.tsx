@@ -30,16 +30,12 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body suppressHydrationWarning>
-        <ThemeProvider attribute="class">
-          <NextIntlClientProvider messages={messages} locale={locale}>
-            <Navbar />
-            <main className="min-h-screen">{children}</main>
-            <Footer />
-          </NextIntlClientProvider>
-        </ThemeProvider>
-      </body>
-    </html>
+    <ThemeProvider attribute="class">
+      <NextIntlClientProvider messages={messages} locale={locale}>
+        <Navbar />
+        <main className="min-h-screen">{children}</main>
+        <Footer />
+      </NextIntlClientProvider>
+    </ThemeProvider>
   );
 }

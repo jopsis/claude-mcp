@@ -1,32 +1,19 @@
 'use client';
 
-import { useLocale } from 'next-intl';
-import { usePathname } from 'next/navigation';
-import useSWR from 'swr';
 import { motion } from 'framer-motion';
-import { type DocContent } from '@/lib/docs';
 import { Markdown } from '@/components/ui/markdown';
 
-const fetcher = async (url: string) => {
-  const res = await fetch(url + '?content=true');  // 添加 content 参数
-  if (!res.ok) {
-    const error = new Error('Failed to fetch document');
-    error.message = await res.text();
-    throw error;
-  }
-  return res.json();
-};
+// 移除SWR客户端获取
+type DocContentProps = {
+  content?: string;
+  isLoading?: boolean;
+  error?: Error;
+}
 
-export function DocContent() {
-  const locale = useLocale();
-  const pathname = usePathname();
-  const slug = pathname.split('/').pop() || 'introduction';
-
-  const { data, error, isLoading } = useSWR<DocContent>(
-    `/api/docs/${locale}/${slug}`,
-    fetcher
-  );
-
+export function DocContent({ content, isLoading, error }: DocContentProps) {
+  // 确保content是字符串类型
+  const safeContent = typeof content === 'string' ? content : '';
+  
   if (isLoading) {
     return (
       <div className="space-y-8 animate-pulse">
@@ -56,7 +43,7 @@ export function DocContent() {
     );
   }
 
-  if (!data || !data.content) {
+  if (!safeContent) {
     return (
       <div className="text-yellow-500 dark:text-yellow-400">
         <h1 className="text-2xl font-bold mb-4">Document Not Found</h1>
@@ -72,7 +59,7 @@ export function DocContent() {
       transition={{ duration: 0.3 }}
       className="min-h-screen pb-16"
     >
-      <Markdown content={data.content} />
+      <Markdown content={safeContent} />
     </motion.article>
   );
 }

@@ -190,7 +190,7 @@
       "languages": {
         "en": "English",
         "zh": "中文",
-        "ja": "日本語"
+        "tw": "繁體中文"
       },
       "features": {
         "community": "全球社群",
@@ -709,17 +709,24 @@
     "learnMore": "了解更多"
   },
   "Servers": {
-    "title": "Claude MCP 伺服器目錄",
-    "description": "探索熱門的 Model Context Protocol 伺服器",
+    "title": "模型上下文協議伺服器目錄",
+    "description": "發現熱門的模型上下文協議伺服器",
     "search": "搜尋...",
     "viewAll": "查看全部",
     "noServers": "未找到伺服器",
     "author": "作者",
     "links": "連結",
-    "homepage": "首頁",
-    "repository": "儲存庫",
+    "homepage": "主頁",
+    "repository": "程式碼儲存庫",
     "tags": "標籤",
-    "capabilities": "功能"
+    "capabilities": "功能",
+    "filterByTags": "按標籤篩選",
+    "allTags": "全部",
+    "searchServers": "搜尋伺服器",
+    "searchPlaceholder": "輸入關鍵詞搜尋...",
+    "serverDetails": "伺服器詳情",
+    "notFound": "伺服器未找到",
+    "notFoundDescription": "請求的伺服器無法找到。"
   },
   "Docs": {
     "meta": {
@@ -734,6 +741,70 @@
         "description": "Cluade MCP 協定文件、開發者資源和社群協作的首選平台。"
       }
     },
+    "landingPage": {
+        "title": "Model Context Protocol (MCP) 文件中心",
+        "welcome": "歡迎訪問 Model Context Protocol (MCP) 文件中心。請從左側導航選擇具體文件主題，或繼續閱讀下方的概述。",
+        "whatIs": {
+          "title": "什麼是 Model Context Protocol？",
+          "description": "Model Context Protocol (MCP) 是由 Anthropic Claude 推出的開源協議，旨在建立AI模型與開發環境之間的統一上下文互動標準。通過提供標準化的上下文信息訪問方式，MCP 使AI模型能夠更好地理解和處理程式碼，充當它們之間的橋樑，讓開發者能夠通過單一標準連接AI應用和各種資料源。"
+        },
+        "features": {
+          "title": "主要功能與特性",
+          "unifiedInterface": {
+            "title": "統一介面",
+            "description": "提供標準化的API介面，簡化AI與各類上下文信息的互動"
+          },
+          "seamlessIntegration": {
+            "title": "無縫整合",
+            "description": "輕鬆整合到現有開發工作流程中，無需複雜的適配"
+          },
+          "multiSource": {
+            "title": "多源資料支援",
+            "description": "支援從多種來源獲取上下文信息，包括程式碼儲存庫、文件等"
+          },
+          "contextManagement": {
+            "title": "智慧上下文管理",
+            "description": "優化上下文信息的傳遞，提高AI模型理解和生成的品質"
+          },
+          "extensibility": {
+            "title": "擴展性設計",
+            "description": "靈活的架構允許添加新的資料源和功能"
+          }
+        },
+        "useCases": {
+          "title": "使用場景",
+          "codeDevelopment": {
+            "title": "程式碼管理與開發",
+            "description": "通過Claude桌面應用程式和MCP協議，AI可以幫助用戶管理GitHub專案，輕鬆完成從創建專案到提交程式碼請求的複雜任務。"
+          },
+          "documentProcessing": {
+            "title": "智慧文件處理",
+            "description": "MCP使AI能夠理解和處理各種文件格式，提供更精準的內容分析和生成建議。"
+          },
+          "knowledgeIntegration": {
+            "title": "知識庫整合",
+            "description": "將企業內部知識庫與AI模型無縫連接，提供基於企業特定知識的智慧回答和建議。"
+          },
+          "devTools": {
+            "title": "開發工具增強",
+            "description": "為IDE和開發工具提供智慧輔助功能，根據程式碼上下文提供更準確的建議和自動完成。"
+          }
+        },
+        "whyChoose": {
+          "title": "為什麼選擇MCP？",
+          "description": "MCP協議的出現有望徹底解決LLM（大型語言模型）應用難以連接資料的痛點，使前沿模型能夠生成更好、更相關的回應，而無需為每個資料源編寫自定義整合程式碼 - 單一的MCP協議可以處理與多個資料源的連接。"
+        },
+        "getStarted": {
+          "title": "開始使用",
+          "description": "要開始使用MCP，請從左側導航的\"入門指南\"部分查看<introduction>簡介</introduction>和<installation>安裝指南</installation>。對於想要快速上手的用戶，我們提供了<quickstart>快速入門指南</quickstart>。"
+        },
+        "cta": {
+          "title": "準備好開始探索MCP了嗎？",
+          "subtitle": "查看我們的詳細文件，了解如何將MCP整合到您的專案中。",
+          "exploreButton": "開始探索",
+          "githubButton": "GitHub 儲存庫"
+        }
+      },
     "nav": {
       "getting_started": "入門指南",
       "write_server": "MCP 伺服器",

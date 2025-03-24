@@ -176,7 +176,7 @@
       "languages": {
         "en": "English",
         "zh": "中文",
-        "ja": "日本語"
+        "tw": "繁體中文"
       },
       "features": {
         "community": "Global Community",
@@ -724,7 +724,14 @@
     "homepage": "Homepage",
     "repository": "Repository",
     "tags": "Tags",
-    "capabilities": "Capabilities"
+    "capabilities": "Capabilities",
+    "filterByTags": "Filter by Tags",
+    "allTags": "All",
+    "searchServers": "Search Servers",
+    "searchPlaceholder": "Enter keywords to search...",
+    "serverDetails": "Server Details",
+    "notFound": "Server Not Found",
+    "notFoundDescription": "The requested server could not be found."
   },
   "Docs": {
       "meta": {
@@ -739,6 +746,70 @@
             "description": "The premier platform for Claude MCP protocol documentation, developer resources and community collaboration."
           }
         },
+      "landingPage": {
+        "title": "Model Context Protocol (MCP) Documentation Center",
+        "welcome": "Welcome to the Model Context Protocol (MCP) Documentation Center. Please select a specific document topic from the navigation on the left, or continue reading the overview below.",
+        "whatIs": {
+          "title": "What is Model Context Protocol?",
+          "description": "Model Context Protocol (MCP) is an open-source protocol launched by Anthropic Claude, aimed at establishing a unified context interaction standard between AI models and development environments. By providing standardized access to context information, MCP enables AI models to better understand and process code, acting as a bridge between them and allowing developers to connect AI applications and various data sources through a single standard."
+        },
+        "features": {
+          "title": "Key Features",
+          "unifiedInterface": {
+            "title": "Unified Interface",
+            "description": "Provides a standardized API interface, simplifying interactions between AI and various context information."
+          },
+          "seamlessIntegration": {
+            "title": "Seamless Integration",
+            "description": "Easily integrates into existing development workflows without complex adaptations."
+          },
+          "multiSource": {
+            "title": "Multi-source Data Support",
+            "description": "Supports retrieving context information from multiple sources, including code repositories, documentation, and more."
+          },
+          "contextManagement": {
+            "title": "Intelligent Context Management",
+            "description": "Optimizes the transmission of context information to improve the quality of AI model understanding and generation."
+          },
+          "extensibility": {
+            "title": "Extensible Design",
+            "description": "Flexible architecture allows adding new data sources and functions."
+          }
+        },
+        "useCases": {
+          "title": "Use Cases",
+          "codeDevelopment": {
+            "title": "Code Management & Development",
+            "description": "Through Claude desktop applications and the MCP protocol, AI can help users manage GitHub projects, easily completing complex tasks from creating projects to submitting code requests."
+          },
+          "documentProcessing": {
+            "title": "Intelligent Document Processing",
+            "description": "MCP enables AI to understand and process various document formats, providing more accurate content analysis and generating suggestions."
+          },
+          "knowledgeIntegration": {
+            "title": "Knowledge Base Integration",
+            "description": "Seamlessly connect enterprise knowledge bases with AI models to provide intelligent answers and suggestions based on enterprise-specific knowledge."
+          },
+          "devTools": {
+            "title": "Development Tool Enhancement",
+            "description": "Provide intelligent assistance for IDEs and development tools, offering more accurate suggestions and auto-completion based on code context."
+          }
+        },
+        "whyChoose": {
+          "title": "Why Choose MCP?",
+          "description": "The emergence of the MCP protocol promises to thoroughly solve the pain point of LLM (Large Language Model) applications struggling to connect to data, enabling cutting-edge models to generate better, more relevant responses without having to write custom integration code for each data source - a single MCP protocol can handle connections to multiple data sources."
+        },
+        "getStarted": {
+          "title": "Getting Started",
+          "description": "To get started with MCP, check out the <introduction>Introduction</introduction> and <installation>Installation Guide</installation> in the \"Getting Started\" section on the left navigation. For users who want to quickly get up and running, we provide a <quickstart>Quick Start Guide</quickstart>."
+        },
+        "cta": {
+          "title": "Ready to Start Exploring MCP?",
+          "subtitle": "Check out our detailed documentation to learn how to integrate MCP into your projects.",
+          "exploreButton": "Start Exploring",
+          "githubButton": "GitHub Repository"
+        }
+      },
       "nav": {
         "getting_started": "Getting Started",
         "write_server": "MCP Server",

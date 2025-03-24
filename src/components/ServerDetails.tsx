@@ -29,9 +29,11 @@ export function ServerDetails({ server }: { server: MCPServer }) {
 
   if (!server) {
     return (
-      <div className="text-center py-12">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Server not found</h2>
-        <p className="mt-2 text-gray-600 dark:text-gray-400">The requested server could not be found.</p>
+      <div className="flex justify-center items-center py-12">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{t('notFound')}</h2>
+          <p className="mt-2 text-gray-600 dark:text-gray-400">{t('notFoundDescription')}</p>
+        </div>
       </div>
     );
   }

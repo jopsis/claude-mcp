@@ -1,58 +1,25 @@
-'use client';
-
 import { Link } from '@/i18n/routing';
 import { ArrowLeftIcon, ArrowRightIcon } from '@radix-ui/react-icons';
 import { cn } from '@/lib/utils';
-import { useEffect, useState } from 'react';
 import { type DocMeta } from '@/lib/docs';
 import { useTranslations } from 'next-intl';
 
-
 interface DocNavigationProps {
-  locale: string;
-  slug: string;
+  prevDoc?: DocMeta; // 上一个文档的元数据（可选）
+  nextDoc?: DocMeta; // 下一个文档的元数据（可选）
 }
 
-export function DocNavigation({ locale, slug }: DocNavigationProps) {
+export function DocNavigation({ 
+  prevDoc, 
+  nextDoc 
+}: DocNavigationProps) {
   const t = useTranslations('Docs');
-  const [docMeta, setDocMeta] = useState<DocMeta | null>(null);
-  const [prevDoc, setPrevDoc] = useState<DocMeta | null>(null);
-  const [nextDoc, setNextDoc] = useState<DocMeta | null>(null);
-
-  useEffect(() => {
-    const fetchDocMeta = async () => {
-      try {
-        const response = await fetch(`/api/docs/${locale}/${slug}`);
-        const data = await response.json();
-        setDocMeta(data);
-
-        // 获取前后文档的元数据
-        if (data.prev) {
-          const prevResponse = await fetch(`/api/docs/${locale}/${data.prev}`);
-          setPrevDoc(await prevResponse.json());
-        } else {
-          setPrevDoc(null);
-        }
-
-        if (data.next) {
-          const nextResponse = await fetch(`/api/docs/${locale}/${data.next}`);
-          setNextDoc(await nextResponse.json());
-        } else {
-          setNextDoc(null);
-        }
-      } catch (error) {
-        console.error('Failed to fetch doc metadata:', error);
-      }
-    };
-
-    fetchDocMeta();
-  }, [locale, slug]);
 
   return (
     <div className="mt-16 flex flex-col sm:flex-row justify-between gap-4 border-t dark:border-gray-800 pt-8">
-      {prevDoc && docMeta?.prev ? (
+      {prevDoc && prevDoc.slug && prevDoc.title ? (
         <Link
-          href={`/docs/${docMeta?.prev}` as any}
+          href={`/docs/${prevDoc.slug}` as any}
           className={cn(
             "group flex items-center gap-3 text-left",
             "p-4 rounded-lg border dark:border-gray-800",
@@ -70,9 +37,9 @@ export function DocNavigation({ locale, slug }: DocNavigationProps) {
         </Link>
       ) : <div />}
 
-      {nextDoc && docMeta?.next ? (
+      {nextDoc && nextDoc.slug && nextDoc.title ? (
         <Link
-          href={`/docs/${docMeta?.next}` as any}
+          href={`/docs/${nextDoc.slug}` as any}
           className={cn(
             "group flex items-center gap-3 text-right",
             "p-4 rounded-lg border dark:border-gray-800",

@@ -1,4 +1,4 @@
-import { Github, Twitter, Globe } from 'lucide-react'
+import { Github, Globe } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { Link as I18nLink } from '@/i18n/routing'
@@ -16,10 +16,8 @@ export function Footer() {
       { name: 'Manus AI', href: 'https://www.manusai.io' },
     ],
     community: [
-      { name: t('links.github'), href: 'https://github.com/anthropics/mcp' },
+      { name: t('links.github'), href: 'https://github.com/modelcontextprotocol' },
       { name: t('links.discord'), href: '/discord' },
-      { name: t('links.twitter'), href: 'https://twitter.com/anthropic' },
-      { name: t('links.feedback'), href: '/feedback' },
     ],
     legal: [
       { name: 'Privacy', href: '/docs' as keyof Pathnames },
@@ -28,9 +26,8 @@ export function Footer() {
   }
 
   const socialLinks = [
-    { name: 'GitHub', href: 'https://github.com/anthropics/mcp', icon: Github },
-    { name: 'Twitter', href: 'https://twitter.com/anthropic', icon: Twitter },
-    { name: 'Website', href: 'https://anthropic.com', icon: Globe },
+    { name: 'GitHub', href: 'https://github.com/modelcontextprotocol', icon: Github },
+    { name: 'Website', href: 'https://www.claudemcp.com', icon: Globe },
   ]
 
   return (

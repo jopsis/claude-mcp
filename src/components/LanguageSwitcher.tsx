@@ -23,10 +23,20 @@ export default function LanguageSwitcher() {
   const pathname = usePathname()
   
   // 从路径中移除语言前缀以获取实际路径
-  const path = pathname.replace(`/${currentLocale}`, '') || '/'
+  const path = pathname.startsWith(`/${currentLocale}`) 
+    ? pathname.replace(`/${currentLocale}`, '')
+    : pathname;
   
   // 将路径转换为合法的路由路径并获取参数
   const getTypedPathAndParams = (path: string): { pathname: keyof Pathnames, params?: Record<string, string> } => {
+    // 如果是根路径
+    if (path === '' || path === '/') {
+      return {
+        pathname: '/' as keyof Pathnames,
+        params: undefined
+      }
+    }
+    
     // 检查是否是 /docs/xxx 格式的路径
     if (path.startsWith('/docs/') && path !== '/docs') {
       const slug = path.split('/').pop()
@@ -35,6 +45,8 @@ export default function LanguageSwitcher() {
         params: { slug: slug! }
       }
     }
+    
+    // 检查是否是 /servers/xxx 格式的路径
     if (path.startsWith('/servers/') && path !== '/servers') {
       const id = path.split('/').pop()
       return {
@@ -42,8 +54,19 @@ export default function LanguageSwitcher() {
         params: { id: id! }
       }
     }
+    
+    // 其他标准路径
+    if (pathnames[path as keyof typeof pathnames]) {
+      return {
+        pathname: path as keyof Pathnames,
+        params: undefined
+      }
+    }
+    
+    // 默认返回主页
+    console.log(`未找到匹配路径: ${path}，返回主页`);
     return {
-      pathname: (pathnames[path as keyof typeof pathnames] || '/') as keyof Pathnames,
+      pathname: '/' as keyof Pathnames,
       params: undefined
     }
   }
@@ -63,7 +86,7 @@ export default function LanguageSwitcher() {
             <Link
               locale={code}
               href={getTypedPathAndParams(path) as any}
-              className={currentLocale === code ? 'font-medium' : ''}
+              className={currentLocale === code ? 'cursor-pointer font-medium' : 'cursor-pointer'}
             >
               {name}
             </Link>

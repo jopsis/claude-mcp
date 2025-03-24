@@ -10,6 +10,11 @@ interface MermaidProps {
   mermaidKey?: string
 }
 
+// 生成唯一ID，不依赖外部库
+function generateId() {
+  return Date.now().toString(36) + Math.random().toString(36).substring(2);
+}
+
 export function Mermaid({ chart, className, mermaidKey = 'mermaid' }: MermaidProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const { theme } = useTheme()
@@ -76,7 +81,7 @@ export function Mermaid({ chart, className, mermaidKey = 'mermaid' }: MermaidPro
         },
       })
 
-      const uniqueId = `mermaid-${mermaidKey}-${Math.random().toString(36).substring(7)}`
+      const uniqueId = `mermaid-${mermaidKey}-${generateId()}`
       mermaid.render(uniqueId, chart).then(({ svg }) => {
         if (containerRef.current) {
           containerRef.current.innerHTML = svg

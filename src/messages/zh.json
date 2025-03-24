@@ -190,7 +190,7 @@
         "languages": {
           "en": "English",
           "zh": "中文",
-          "ja": "日本語"
+          "tw": "繁體中文"
         },
         "features": {
           "community": "全球社区",
@@ -729,38 +729,109 @@
       "learnMore": "了解更多"
     },
     "Servers": {
-      "title": "Claude MCP 服务器目录",
-      "description": "探索流行的 Model Context Protocol 服务器",
+      "title": "模型上下文协议服务器目录",
+      "description": "发现热门的模型上下文协议服务器",
       "search": "搜索...",
-      "viewAll": "查看所有",
-      "noServers": "没有找到服务器",
+      "viewAll": "查看全部",
+      "noServers": "未找到服务器",
       "author": "作者",
       "links": "链接",
       "homepage": "主页",
-      "repository": "仓库",
+      "repository": "代码仓库",
       "tags": "标签",
-      "capabilities": "功能"
+      "capabilities": "功能",
+      "filterByTags": "按标签筛选",
+      "allTags": "全部",
+      "searchServers": "搜索服务器",
+      "searchPlaceholder": "输入关键词搜索...",
+      "serverDetails": "服务器详情",
+      "notFound": "服务器未找到",
+      "notFoundDescription": "请求的服务器无法找到。"
     },
     "Docs": {
       "meta": {
           "title": "MCP 文档",
-          "description": "Cluade MCP 协议文档、开发者资源和社区协作的首选平台。",
+          "description": "Claude MCP协议的官方文档平台，提供开发者资源和社区协作。",
           "og": {
-            "title": "MCP 文档",
-            "description": "Cluade MCP 协议文档、开发者资源和社区协作的首选平台。"
+            "title": "MCP 文档", 
+            "description": "Claude MCP协议的官方文档平台，提供开发者资源和社区协作。"
           },
           "twitter": {
             "title": "MCP 文档",
-            "description": "Cluade MCP 协议文档、开发者资源和社区协作的首选平台。"
+            "description": "Claude MCP协议的官方文档平台，提供开发者资源和社区协作。"
           }
         },
+      "landingPage": {
+        "title": "Model Context Protocol (MCP) 文档中心",
+        "welcome": "欢迎访问 Model Context Protocol (MCP) 文档中心。请从左侧导航选择具体文档主题，或继续阅读下方的概述。",
+        "whatIs": {
+          "title": "什么是 Model Context Protocol？",
+          "description": "Model Context Protocol (MCP) 是由 Anthropic Claude 推出的开源协议，旨在建立AI模型与开发环境之间的统一上下文交互标准。通过提供标准化的上下文信息访问方式，MCP 使AI模型能够更好地理解和处理代码，充当它们之间的桥梁，让开发者能够通过单一标准连接AI应用和各种数据源。"
+        },
+        "features": {
+          "title": "主要功能与特性",
+          "unifiedInterface": {
+            "title": "统一接口",
+            "description": "提供标准化的API接口，简化AI与各类上下文信息的交互"
+          },
+          "seamlessIntegration": {
+            "title": "无缝集成",
+            "description": "轻松集成到现有开发工作流程中，无需复杂的适配"
+          },
+          "multiSource": {
+            "title": "多源数据支持",
+            "description": "支持从多种来源获取上下文信息，包括代码仓库、文档等"
+          },
+          "contextManagement": {
+            "title": "智能上下文管理",
+            "description": "优化上下文信息的传递，提高AI模型理解和生成的质量"
+          },
+          "extensibility": {
+            "title": "扩展性设计",
+            "description": "灵活的架构允许添加新的数据源和功能"
+          }
+        },
+        "useCases": {
+          "title": "使用场景",
+          "codeDevelopment": {
+            "title": "代码管理与开发",
+            "description": "通过Claude桌面应用程序和MCP协议，AI可以帮助用户管理GitHub项目，轻松完成从创建项目到提交代码请求的复杂任务。"
+          },
+          "documentProcessing": {
+            "title": "智能文档处理",
+            "description": "MCP使AI能够理解和处理各种文档格式，提供更精准的内容分析和生成建议。"
+          },
+          "knowledgeIntegration": {
+            "title": "知识库集成",
+            "description": "将企业内部知识库与AI模型无缝连接，提供基于企业特定知识的智能回答和建议。"
+          },
+          "devTools": {
+            "title": "开发工具增强",
+            "description": "为IDE和开发工具提供智能辅助功能，根据代码上下文提供更准确的建议和自动完成。"
+          }
+        },
+        "whyChoose": {
+          "title": "为什么选择MCP？",
+          "description": "MCP协议的出现有望彻底解决LLM（大型语言模型）应用难以连接数据的痛点，使前沿模型能够生成更好、更相关的响应，而无需为每个数据源编写自定义集成代码 - 单一的MCP协议可以处理与多个数据源的连接。"
+        },
+        "getStarted": {
+          "title": "开始使用",
+          "description": "要开始使用MCP，请从左侧导航的\"入门指南\"部分查看<introduction>简介</introduction>和<installation>安装指南</installation>。对于想要快速上手的用户，我们提供了<quickstart>快速入门指南</quickstart>。"
+        },
+        "cta": {
+          "title": "准备好开始探索MCP了吗？",
+          "subtitle": "查看我们的详细文档，了解如何将MCP集成到您的项目中。",
+          "exploreButton": "开始探索",
+          "githubButton": "GitHub 仓库"
+        }
+      },
       "nav": {
         "getting_started": "入门指南",
         "write_server": "MCP 服务器",
         "guides": "使用指南",
         "advanced": "高级主题",
-        "previous": "上一节",
-        "next": "下一节",
+        "previous": "上一页",
+        "next": "下一页",
         "items": {
           "introduction": "简介",
           "architecture": "架构",
@@ -772,7 +843,7 @@
           "resources": "资源管理",
           "tools": "工具使用",
           "messages": "消息处理",
-          "security": "安全性",
+          "security": "安全",
           "deployment": "部署",
           "configuration": "配置"
         }

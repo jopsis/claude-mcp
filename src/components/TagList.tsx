@@ -1,30 +1,28 @@
 'use client';
 
-import { useRouter, useSearchParams, useParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { Button } from '@/components/ui/button';
+import { useRouter, useSearchParams, usePathname } from 'next/navigation';
+import { Badge } from '@/components/ui/badge';
+import { useTranslations } from 'next-intl';
 
-export function TagList() {
+// 定义props接口
+type TagListProps = {
+  initialTags?: string[];
+};
+
+export function TagList({ initialTags = [] }: TagListProps) {
   const router = useRouter();
-  const { locale } = useParams();
+  const pathname = usePathname();
   const searchParams = useSearchParams();
-  const [tags, setTags] = useState<string[]>([]);
-  const selectedTags = searchParams?.getAll('tags') ?? [];
-
-  useEffect(() => {
-    async function fetchTags() {
-      try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/servers/${locale}/tags`);
-        const data = await res.json();
-        setTags(data);
-      } catch (error) {
-        console.error('Failed to fetch tags:', error);
-      }
-    }
-
-    fetchTags();
-  }, [locale]);
-
+  const t = useTranslations('Servers');
+  
+  // 获取当前选中的标签(可能是字符串或数组)
+  const selectedTagParam = searchParams?.get('tags') || searchParams?.getAll('tags');
+  
+  // 标准化为数组
+  const selectedTags = Array.isArray(selectedTagParam) 
+    ? selectedTagParam 
+    : (selectedTagParam ? [selectedTagParam] : []);
+  
   const handleTagClick = (tag: string | null) => {
     const params = new URLSearchParams(searchParams?.toString() ?? '');
     
@@ -32,46 +30,51 @@ export function TagList() {
       // 点击 All 标签时，移除所有标签过滤
       params.delete('tags');
     } else {
-      const currentTags = params.getAll('tags');
+      // 移除当前的所有tags参数
+      params.delete('tags');
       
-      if (currentTags.includes(tag)) {
-        // Remove tag
-        params.delete('tags');
-        currentTags.filter(t => t !== tag).forEach(t => params.append('tags', t));
-      } else {
-        // Add tag
+      // 判断当前标签是否已选中
+      if (!selectedTags.includes(tag)) {
+        // 如果标签未选中，设置为唯一选中标签
         params.append('tags', tag);
       }
+      // 如果标签已选中，则不添加任何标签，相当于选择"全部"
     }
     
-    router.push(`/servers?${params.toString()}`);
+    // 保留其他查询参数（如q=关键词）
+    const newPath = `${pathname}${params.toString() ? `?${params.toString()}` : ''}`;
+    router.push(newPath);
   };
 
   return (
-    <div className="flex flex-wrap gap-2">
-      <Button
-        onClick={() => handleTagClick(null)}
-        className={`rounded-full text-sm font-medium transition-colors
-          ${selectedTags.length === 0
-            ? 'bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300'
-            : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
-          }`}
-      >
-        All
-      </Button>
-      {tags.map(tag => (
-        <Button
-          key={tag}
-          onClick={() => handleTagClick(tag)}
-          className={`rounded-full text-sm font-medium transition-colors
-            ${selectedTags.includes(tag)
-              ? 'bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300'
-              : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+    <div className="py-4">
+      <div className="flex flex-wrap gap-2">
+        <Badge
+          variant="outline"
+          onClick={() => handleTagClick(null)}
+          className={`cursor-pointer rounded-full px-3 py-1 text-sm transition-colors
+            ${selectedTags.length === 0
+              ? 'bg-blue-600 hover:bg-blue-700 text-white border-transparent'
+              : 'bg-gray-100 hover:bg-gray-200 text-gray-900 border-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-100'
             }`}
         >
-          {tag}
-        </Button>
-      ))}
+          {t('allTags')}
+        </Badge>
+        {initialTags.map(tag => (
+          <Badge
+            key={tag}
+            variant="outline"
+            onClick={() => handleTagClick(tag)}
+            className={`cursor-pointer rounded-full px-3 py-1 text-sm transition-colors
+              ${selectedTags.includes(tag)
+                ? 'bg-blue-600 hover:bg-blue-700 text-white border-transparent'
+                : 'bg-gray-900/90 hover:bg-gray-800 text-white border-transparent dark:bg-gray-800 dark:hover:bg-gray-700'
+              }`}
+          >
+            {tag}
+          </Badge>
+        ))}
+      </div>
     </div>
   );
 } 

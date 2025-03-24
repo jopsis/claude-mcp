@@ -6,13 +6,23 @@ import { ProtocolSection } from '@/components/home/protocol-section';
 import { IntegrationSection } from '@/components/home/integration-section';
 import { GlobalSection } from '@/components/home/global-section';
 import { FeaturedServers } from '@/components/home/featured-servers';
+import { loadServersData } from '@/lib/data-utils';
+import { locales } from '@/i18n/config';
+
+// 设置静态生成和缓存
+export const revalidate = 3600; // 每小时重新验证
 
 type PageProps = {  
     params: Promise<{ locale: string }>;
-  }
+}
+
+// 预生成所有可能的主页路径
+export async function generateStaticParams() {
+  return locales.map(locale => ({ locale }));
+}
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const {locale} = await params;
+  const { locale } = await params;
   const t = await getTranslations('Index');
   
   return {
@@ -40,11 +50,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function Home() {
+export default async function Home({ params }: PageProps) {
+  const { locale } = await params;
+  
+  // 加载精选服务器数据
+  const { servers: featuredServers } = await loadServersData(locale, 6);
+  
   return (
     <main className="flex min-h-screen flex-col antialiased">
       <HeroSection />
-      <FeaturedServers />
+      <FeaturedServers servers={featuredServers} />
       <OverviewSection />
       <ProtocolSection />
       <IntegrationSection />

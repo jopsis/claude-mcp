@@ -6,11 +6,18 @@ import { ArrowLeft, Github, ArrowUpRight } from 'lucide-react'
 import { Link } from '@/i18n/routing'
 import { Mermaid } from '@/components/ui/mermaid'
 
+// 设置静态生成和缓存
+export const revalidate = 3600; // 每小时重新验证
 
 type PageProps = {
   params: Promise<{ locale: string }>;
 }
 
+// 预生成所有可能的规范页面路径
+export async function generateStaticParams() {
+  // 支持的语言
+  return ['en', 'zh', 'tw'].map(locale => ({ locale }));
+}
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;

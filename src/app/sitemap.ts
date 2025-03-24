@@ -1,17 +1,33 @@
-import { languages } from "@/i18n/config";
+import { locales } from "@/i18n/config";
 import { MetadataRoute } from "next";
-import { getServers } from "@/lib/servers";
+import { loadServersData } from "@/lib/data-utils";
+import { readdir } from 'fs/promises';
+import path from 'path';
 import type { DocMeta } from "@/lib/docs";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.claudemcp.com";
+const baseUrl = "https://www.claudemcp.com";
 
 async function fetchDocs(locale: string): Promise<DocMeta[]> {
   try {
-    const response = await fetch(`${baseUrl}/api/docs/${locale}`);
-    if (!response.ok) {
-      throw new Error("Failed to fetch docs");
+    // 从文件系统获取文档数据
+    const docsDir = path.join(process.cwd(), 'docs', locale);
+    const files = await readdir(docsDir);
+    
+    const docs: DocMeta[] = [];
+    for (const file of files) {
+      if (file.endsWith('.md')) {
+        // 这里只是简单加入文档slug，实际项目中应该解析文档元数据
+        const slug = file.replace('.md', '');
+        docs.push({
+          slug,
+          title: slug, // 理想情况下应该从文件内容中提取
+          lastModified: new Date().toISOString(),
+          description: '', // 添加空描述
+          section: 'general' // 添加默认分类
+        });
+      }
     }
-    return await response.json();
+    return docs;
   } catch (error) {
     console.error(`Failed to fetch docs for locale ${locale}:`, error);
     return [];
@@ -21,31 +37,31 @@ async function fetchDocs(locale: string): Promise<DocMeta[]> {
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 获取所有语言的服务器数据
   const serversByLocale = await Promise.all(
-    Object.keys(languages).map(async (lang) => {
-      const servers = await getServers(lang);
-      return { locale: lang, servers };
+    locales.map(async (locale) => {
+      const { servers } = await loadServersData(locale);
+      return { locale, servers };
     })
   );
 
   // 获取所有语言的文档数据
   const docsByLocale = await Promise.all(
-    Object.keys(languages).map(async (lang) => {
-      const docs = await fetchDocs(lang);
-      return { locale: lang, docs };
+    locales.map(async (locale) => {
+      const docs = await fetchDocs(locale);
+      return { locale, docs };
     })
   );
 
   // 生成首页 URLs
-  const homeUrls = Object.keys(languages).map((lang) => ({
-    url: lang === "en" ? baseUrl : `${baseUrl}/${lang}`,
+  const homeUrls = locales.map((locale) => ({
+    url: locale === "en" ? baseUrl : `${baseUrl}/${locale}`,
     lastModified: new Date(),
     changeFrequency: "daily" as const,
     priority: 1,
   }));
 
   // 生成服务器列表页 URLs
-  const serverListUrls = Object.keys(languages).map((lang) => ({
-    url: lang === "en" ? `${baseUrl}/servers` : `${baseUrl}/${lang}/servers`,
+  const serverListUrls = locales.map((locale) => ({
+    url: locale === "en" ? `${baseUrl}/servers` : `${baseUrl}/${locale}/servers`,
     lastModified: new Date(),
     changeFrequency: "daily" as const,
     priority: 0.9,
@@ -78,15 +94,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   );
 
   // 生成其他静态页面 URLs
-  const staticUrls = Object.keys(languages).flatMap((lang) => [
+  const staticUrls = locales.flatMap((locale) => [
     {
-      url: lang === "en" ? `${baseUrl}/docs` : `${baseUrl}/${lang}/docs`,
+      url: locale === "en" ? `${baseUrl}/docs` : `${baseUrl}/${locale}/docs`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: lang === "en" ? `${baseUrl}/specification` : `${baseUrl}/${lang}/specification`,
+      url: locale === "en" ? `${baseUrl}/specification` : `${baseUrl}/${locale}/specification`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.7,

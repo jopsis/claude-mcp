@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { ServerCard } from "../ServerCard";
 import type { MCPServer } from "@/types/server";
@@ -9,33 +7,17 @@ import { Link } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-export function FeaturedServers() {
+type FeaturedServersProps = {
+  servers: MCPServer[];
+}
+
+export function FeaturedServers({ servers }: FeaturedServersProps) {
   const t = useTranslations("Servers");
-  const { locale } = useParams();
-  const [servers, setServers] = useState<MCPServer[]>([]);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    async function fetchServers() {
-      setLoading(true);
-      try {
-        // 获取前3个服务器作为精选
-        const res = await fetch(`/api/servers/${locale}?pageSize=6`);
-        const data = await res.json();
-        setServers(data);
-      } catch (error) {
-        console.error("Failed to fetch featured servers:", error);
-      }
-      setLoading(false);
-    }
-
-    fetchServers();
-  }, [locale]);
-
-  if (loading) {
+  if (!servers || servers.length === 0) {
     return (
       <div className="flex justify-center items-center py-12">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 dark:border-blue-400" />
+        <p className="text-gray-600 dark:text-gray-300">{t("noServers")}</p>
       </div>
     );
   }

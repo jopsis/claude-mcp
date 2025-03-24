@@ -801,7 +801,7 @@
         },
         "getStarted": {
           "title": "Getting Started",
-          "description": "To get started with MCP, check out the <introduction>Introduction</introduction> and <installation>Installation Guide</installation> in the \"Getting Started\" section on the left navigation. For users who want to quickly get up and running, we provide a <quickstart>Quick Start Guide</quickstart>."
+          "description": "To get started with MCP, check out the <introduction>Introduction</introduction> in the \"Getting Started\" section on the left navigation. For users who want to quickly get up and running, we provide a <quickstart>Quick Start Guide</quickstart>."
         },
         "cta": {
           "title": "Ready to Start Exploring MCP?",

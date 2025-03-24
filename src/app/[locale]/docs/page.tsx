@@ -103,9 +103,6 @@ export default async function DocsPage({ params }: PageProps) {
                     introduction: (chunks) => (
                       <a href={`/${locale === 'en' ? '' : locale + '/'}docs/introduction`} className="text-blue-600 dark:text-blue-400 hover:underline">{chunks}</a>
                     ),
-                    installation: (chunks) => (
-                      <a href={`/${locale === 'en' ? '' : locale + '/'}docs/installation`} className="text-blue-600 dark:text-blue-400 hover:underline">{chunks}</a>
-                    ),
                     quickstart: (chunks) => (
                       <a href={`/${locale === 'en' ? '' : locale + '/'}docs/quickstart`} className="text-blue-600 dark:text-blue-400 hover:underline">{chunks}</a>
                     )

@@ -816,7 +816,7 @@
         },
         "getStarted": {
           "title": "开始使用",
-          "description": "要开始使用MCP，请从左侧导航的\"入门指南\"部分查看<introduction>简介</introduction>和<installation>安装指南</installation>。对于想要快速上手的用户，我们提供了<quickstart>快速入门指南</quickstart>。"
+          "description": "要开始使用MCP，请从左侧导航的\"入门指南\"部分查看<introduction>简介</introduction>。对于想要快速上手的用户，我们提供了<quickstart>快速入门指南</quickstart>。"
         },
         "cta": {
           "title": "准备好开始探索MCP了吗？",

@@ -24,7 +24,7 @@ export default function Navbar() {
           <div className="flex">
             <I18nLink href="/" aria-label="Claude MCP" title="Claude MCP" className="flex items-center">
               <img src="/logo.png" alt="Claude MCP" className="w-10 h-auto mr-1" />
-              <span className="text-xl font-bold text-gray-900 dark:text-white">MCP</span>
+              <span className="text-xl font-bold text-gray-900 dark:text-white">{t('title')}</span>
             </I18nLink>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               <I18nLink 

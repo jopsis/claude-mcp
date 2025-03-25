@@ -1,5 +1,6 @@
 {
   "nav": {
+    "title": "MCP 協議教程網",
     "servers": "服務目錄",
     "documentation": "文档",
     "blog": "部落格",
@@ -42,7 +43,7 @@
     },
     "hero": {
       "introducing": "全新發布",
-      "title": "統一的模型上下文互動協議",
+      "title": "MCP 協議教程網",
       "description": "MCP（Model Context Protocol）是 Claude 定制的一個開放的協議標準，用於在 AI 模型和開發環境之間建立統一的上下文互動，讓 AI 更好地理解和處理程式碼",
       "getStarted": "開始使用",
       "documentation": "查看文件",
@@ -200,7 +201,7 @@
     }
   },
   "footer": {
-    "description": "模型上下文協議（MCP）是一個用於整合 AI 模型與外部資料和工具的開放標準。",
+    "description": "MCP 教程网是一个专注于 MCP 协议的学习网站，提供 MCP 协议的详细介绍、示例代码和最佳实践。",
     "copyright": "保留所有權利。",
     "sections": {
       "product": "產品",

@@ -1,4 +1,3 @@
-import { Github, Globe } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { Link as I18nLink } from '@/i18n/routing'
@@ -6,10 +5,10 @@ import { type Pathnames } from '@/i18n/config'
 
 export function Footer() {
   const t = useTranslations('footer')
+  const tNav = useTranslations('nav')
 
   const navigation = {
     product: [
-      { name: 'Documentation', href: '/docs' as keyof Pathnames },
       { name: 'Fastclass', href: 'https://fastclass.cn' },
       { name: 'JoyGames', href: 'https://www.joygames.io'},
       { name: 'ToMarkdown', href: 'https://www.tomarkdown.org' },
@@ -17,18 +16,9 @@ export function Footer() {
     ],
     community: [
       { name: t('links.github'), href: 'https://github.com/modelcontextprotocol' },
-      { name: t('links.discord'), href: '/discord' },
-    ],
-    legal: [
-      { name: 'Privacy', href: '/docs' as keyof Pathnames },
-      { name: 'Terms', href: '/docs' as keyof Pathnames },
+      { name: 'Documentation', href: '/docs' as keyof Pathnames },
     ],
   }
-
-  const socialLinks = [
-    { name: 'GitHub', href: 'https://github.com/modelcontextprotocol', icon: Github },
-    { name: 'Website', href: 'https://www.claudemcp.com', icon: Globe },
-  ]
 
   return (
     <footer className="border-t bg-background/50 backdrop-blur-xl">
@@ -36,28 +26,11 @@ export function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
             <Link href="/" className="text-xl font-bold">
-              MCP
+              {tNav('title')}
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
               {t('description')}
             </p>
-            <div className="flex space-x-6">
-              {socialLinks.map((item) => {
-                const Icon = item.icon
-                return (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className="sr-only">{item.name}</span>
-                    <Icon className="h-5 w-5" />
-                  </a>
-                )
-              })}
-            </div>
           </div>
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
@@ -94,29 +67,13 @@ export function Footer() {
                 </ul>
               </div>
             </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-sm font-semibold">{t('sections.legal')}</h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  {navigation.legal.map((item) => (
-                    <li key={item.name}>
-                      <I18nLink
-                        href={item.href as any}
-                        className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                      >
-                        {item.name}
-                      </I18nLink>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            
           </div>
         </div>
         <div className="mt-12 pt-8 border-t">
           <div className="flex items-center">
             <p className="text-xs text-muted-foreground">
-              &copy; {new Date().getFullYear()} Anthropic. {t('copyright')}
+              &copy; {new Date().getFullYear()} Claude MCP Tutorial.
             </p>
             <Link href="/sitemap.xml" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
               Sitemap

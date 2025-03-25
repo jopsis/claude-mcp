@@ -1,5 +1,6 @@
 {
   "nav": {
+    "title": "MCP Tutorial",
     "servers": "Server Directory",
     "documentation": "Documentation",
     "blog": "Blog",
@@ -28,7 +29,7 @@
     },
     "hero": {
       "introducing": "Introducing",
-      "title": "Unified Model Context Interaction Protocol",
+      "title": "MCP Protocol Tutorial",
       "description": "MCP (Model Context Protocol) is an open protocol standard customized by Claude for establishing unified context interaction between AI models and development environments, enabling AI to better understand and process code",
       "getStarted": "Get Started",
       "documentation": "View Documentation",
@@ -186,7 +187,7 @@
     }
   },
   "footer": {
-    "description": "Model Context Protocol (MCP) is an open standard for integrating AI models with external data and tools.",
+    "description": "MCP Tutorial is a website dedicated to learning the MCP protocol, providing detailed introductions, example codes, and best practices.",
     "copyright": "All rights reserved.",
     "sections": {
       "product": "Product",

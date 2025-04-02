@@ -32,7 +32,7 @@ What prompts should it include?
 What external systems should it interact with?
 ```
 
-Here, we'll use the weather query example we previously 讲解的天气查询为例，来为大家演示如何使用 LLM 来开发一个 MCP 服务器。
+Here, we'll use the weather query example we previously explained to demonstrate how to use LLM to develop an MCP server.
 
 Open the Cursor chat window, select the `llms-full.txt` file using the `@` command, and describe the requirements to Cursor:
 

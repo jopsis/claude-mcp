@@ -1,6 +1,6 @@
 {
   "nav": {
-    "title": "MCP Tutorial",
+    "title": "Claude MCP Tutorial",
     "servers": "Server Directory",
     "documentation": "Documentation",
     "blog": "Blog",
@@ -11,7 +11,13 @@
     "title": "Global Tech Community",
     "description": "The premier platform for Anthropic MCP protocol documentation, developer resources, and community collaboration.",
     "getStarted": "Get Started",
-    "joinCommunity": "Join Community"
+    "joinCommunity": "Join Community",
+    "latestDocs": {
+      "title": "Claude MCP Latest Documentation",
+      "description": "Stay updated with the latest Claude MCP documentation and learning tutorials",
+      "noDate": "No date",
+      "viewAll": "View All Documents"
+    }
   },
   "Index": {
     "meta": {
@@ -29,15 +35,15 @@
     },
     "hero": {
       "introducing": "Introducing",
-      "title": "MCP Protocol Tutorial",
-      "description": "MCP (Model Context Protocol) is an open protocol standard customized by Claude for establishing unified context interaction between AI models and development environments, enabling AI to better understand and process code",
+      "title": "Claude MCP Tutorial",
+      "description": "Claude MCP (Model Context Protocol) is an open protocol standard customized by Claude for establishing unified context interaction between AI models and development environments, enabling AI to better understand and process code",
       "getStarted": "Get Started",
       "documentation": "View Documentation",
       "videoCourse": "Video Course"
     },
     "overview": {
-      "title": "Why Choose MCP?",
-      "description1": "MCP provides a standardized way to handle context interaction between AI models and development environments",
+      "title": "Why Choose Claude MCP?",
+      "description1": "Claude MCP provides a standardized way to handle context interaction between AI models and development environments",
       "description2": "Through a unified protocol, we can enable AI to better understand code structure, project environment, and developer intent",
       "supports": {
         "systems": "Multi-System Support",
@@ -53,7 +59,7 @@
       },
       "architecture": {
         "title": "Architecture",
-        "description": "MCP defines a flexible client-server architecture that supports multiple transport mechanisms and extensible capabilities.",
+        "description": "Claude MCP defines a flexible client-server architecture that supports multiple transport mechanisms and extensible capabilities.",
         "diagram": "flowchart TB\n    Client[Client]-->|Send Request|Server[Server]\n    Server-->|Send Response|Client\n    Server-->|Send Notification|Client\n    subgraph Server Capabilities\n        Prompts[Prompts]\n        Resources[Resources]\n        Tools[Tools]\n    end",
         "server": {
           "title": "Server Functionality",
@@ -116,7 +122,7 @@
       }
     },
     "protocol": {
-      "title": "Protocol Design",
+      "title": "Claude MCP Protocol Design",
       "description": "Simple yet powerful protocol design based on JSON-RPC 2.0, supporting bidirectional communication and rich context interaction",
       "example": "Example",
       "viewSpec": "View Full Specification",
@@ -177,7 +183,8 @@
       "languages": {
         "en": "English",
         "zh": "中文",
-        "tw": "繁體中文"
+        "tw": "繁體中文",
+        "ko": "한국어"
       },
       "features": {
         "community": "Global Community",
@@ -715,8 +722,8 @@
     "learnMore": "Learn More"
   },
   "Servers": {
-    "title": "Model Context Protocol Server Directory",
-    "description": "Discover popular Model Context Protocol servers",
+    "title": "Claude MCP Server Directory",
+    "description": "Discover the best and most popular claude mcp servers",
     "search": "Search...",
     "viewAll": "View All",
     "noServers": "No servers found",

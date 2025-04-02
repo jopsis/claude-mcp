@@ -1,6 +1,6 @@
 {
     "nav": {
-      "title": "MCP 教程网",
+      "title": "Claude MCP",
       "servers": "服务目录",
       "documentation": "文档",
       "blog": "博客",
@@ -25,7 +25,13 @@
       "title": "全球技术社区",
       "description": "Anthropic MCP协议文档、开发者资源和社区协作的首选平台。",
       "getStarted": "开始使用",
-      "joinCommunity": "加入社区"
+      "joinCommunity": "加入社区",
+      "latestDocs": {
+        "title": "Claude MCP 最新学习文档",
+        "description": "及时了解我们最新的 Claude MCP 文档和学习教程",
+        "noDate": "暂无日期",
+        "viewAll": "查看全部文档"
+      }
     },
     "Index": {
       "meta": {
@@ -43,15 +49,15 @@
       },
       "hero": {
         "introducing": "全新发布",
-        "title": "MCP 协议教程网",
-        "description": "MCP（Model Context Protocol）是 Claude 定制的一个开放的协议标准，用于在AI模型和开发环境之间建立统一的上下文交互，让AI更好地理解和处理代码。",
+        "title": "Claude MCP 教程网",
+        "description": "Claude MCP（模型上下文协议）是 Claude 定制的一个开放的协议标准，用于在AI模型和开发环境之间建立统一的上下文交互，让AI更好地理解和处理代码。",
         "getStarted": "开始使用",
         "documentation": "查看文档",
         "videoCourse": "视频课程"
       },
       "overview": {
-        "title": "为什么选择 MCP?",
-        "description1": "MCP 提供了一个标准化的方式来处理AI模型与开发环境之间的上下文交互",
+        "title": "为什么选择 Claude MCP?",
+        "description1": "Claude MCP 提供了一个标准化的方式来处理AI模型与开发环境之间的上下文交互",
         "description2": "通过统一的协议，我们可以让AI更好地理解代码结构、项目环境和开发者意图",
         "supports": {
           "systems": "多系统支持",
@@ -67,7 +73,7 @@
         },
         "architecture": {
           "title": "架构",
-          "description": "MCP 定义了一个灵活的客户端-服务器架构，支持多种传输机制和扩展能力。",
+          "description": "Claude MCP 定义了一个灵活的客户端-服务器架构，支持多种传输机制和扩展能力。",
           "diagram": "flowchart TB\n    Client[客户端]-->|发送请求|Server[服务器]\n    Server-->|发送响应|Client\n    Server-->|发送通知|Client\n    subgraph 服务器能力\n        Prompts[提示词]\n        Resources[资源]\n        Tools[工具]\n    end",
           "server": {
             "title": "服务器功能",
@@ -191,7 +197,8 @@
         "languages": {
           "en": "English",
           "zh": "中文",
-          "tw": "繁體中文"
+          "tw": "繁體中文",
+          "ko": "한국어"
         },
         "features": {
           "community": "全球社区",
@@ -730,8 +737,8 @@
       "learnMore": "了解更多"
     },
     "Servers": {
-      "title": "模型上下文协议服务器目录",
-      "description": "发现热门的模型上下文协议服务器",
+      "title": "Claude MCP 服务器目录",
+      "description": "发现最好最热门的 Claude MCP 服务器",
       "search": "搜索...",
       "viewAll": "查看全部",
       "noServers": "未找到服务器",

@@ -21,7 +21,7 @@ async function fetchDocs(locale: string): Promise<DocMeta[]> {
         docs.push({
           slug,
           title: slug, // 理想情况下应该从文件内容中提取
-          lastModified: new Date().toISOString(),
+          pubDate: new Date().toISOString(),
           description: '', // 添加空描述
           section: 'general' // 添加默认分类
         });
@@ -87,7 +87,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         locale === "en"
           ? `${baseUrl}/docs/${doc.slug}`
           : `${baseUrl}/${locale}/docs/${doc.slug}`,
-      lastModified: doc.lastModified ? new Date(doc.lastModified) : new Date(),
+      lastModified: doc.pubDate ? new Date(doc.pubDate) : new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.8,
     }))

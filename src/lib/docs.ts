@@ -10,7 +10,7 @@ export interface DocMeta {
   section: string;
   prev?: string;
   next?: string;
-  lastModified?: string;
+  pubDate?: string;
   order?: number;
 }
 
@@ -63,7 +63,7 @@ export async function getDocList(locale: string = 'en'): Promise<Record<string, 
           };
           
           // 添加可选字段
-          if (data.lastModified) docMeta.lastModified = data.lastModified;
+          if (data.pubDate) docMeta.pubDate = data.pubDate;
           if (data.prev) docMeta.prev = data.prev;
           if (data.next) docMeta.next = data.next;
           if (data.order) docMeta.order = parseInt(data.order, 10);
@@ -157,5 +157,26 @@ export async function getDocList(locale: string = 'en'): Promise<Record<string, 
   } catch (error) {
     console.error(`Failed to get doc list for locale ${locale}:`, error);
     return { general: [] };
+  }
+}
+
+// 获取最新文档列表
+export async function getLatestDocs(locale: string = 'en', limit: number = 3): Promise<DocMeta[]> {
+  try {
+    const allDocs = await getDocList(locale);
+    const flatDocs = Object.values(allDocs).flat();
+    
+    // 按lastModified排序，如果没有pubDate则排在后面
+    return flatDocs
+      .sort((a, b) => {
+        if (!a.pubDate && !b.pubDate) return 0;
+        if (!a.pubDate) return 1;
+        if (!b.pubDate) return -1;
+        return new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime();
+      })
+      .slice(0, limit);
+  } catch (error) {
+    console.error('获取最新文档失败:', error);
+    return [];
   }
 }

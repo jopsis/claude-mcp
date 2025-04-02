@@ -1,8 +1,8 @@
 {
   "nav": {
-    "title": "MCP 協議教程網",
+    "title": "Claude MCP",
     "servers": "服務目錄",
-    "documentation": "文档",
+    "documentation": "文件",
     "blog": "部落格",
     "specification": "協議規範",
     "community": "社群",
@@ -25,7 +25,13 @@
     "title": "全球技術社群",
     "description": "Anthropic MCP 協議文件、開發者資源和社群協作的首選平台。",
     "getStarted": "開始使用",
-    "joinCommunity": "加入社群"
+    "joinCommunity": "加入社群",
+    "latestDocs": {
+      "title": "Claude MCP 最新學習文件",
+      "description": "及時了解我們最新的 Claude MCP 文件和學習教程",
+      "noDate": "暫無日期",
+      "viewAll": "查看全部文件"
+    }
   },
   "Index": {
     "meta": {
@@ -43,15 +49,15 @@
     },
     "hero": {
       "introducing": "全新發布",
-      "title": "MCP 協議教程網",
-      "description": "MCP（Model Context Protocol）是 Claude 定制的一個開放的協議標準，用於在 AI 模型和開發環境之間建立統一的上下文互動，讓 AI 更好地理解和處理程式碼",
+      "title": "Claude MCP 教程網",
+      "description": "Claude MCP（模型上下文協議）是 Claude 定制的一個開放的協議標準，用於在 AI 模型和開發環境之間建立統一的上下文互動，讓 AI 更好地理解和處理程式碼",
       "getStarted": "開始使用",
       "documentation": "查看文件",
       "videoCourse": "視頻課程"
     },
     "overview": {
-      "title": "為什麼選擇 MCP?",
-      "description1": "MCP 提供了一個標準化的方式來處理 AI 模型與開發環境之間的上下文互動",
+      "title": "為什麼選擇 Claude MCP?",
+      "description1": "Claude MCP 提供了一個標準化的方式來處理 AI 模型與開發環境之間的上下文互動",
       "description2": "通過統一的協議，我們可以讓 AI 更好地理解程式碼結構、專案環境和開發者意圖",
       "supports": {
         "systems": "多系統支援",
@@ -130,7 +136,7 @@
       }
     },
     "protocol": {
-      "title": "協議設計",
+      "title": "Claude MCP 協議設計",
       "description": "基於 JSON-RPC 2.0 的簡單而強大的協議設計，支援雙向通訊和豐富的上下文互動",
       "example": "範例",
       "viewSpec": "查看完整規範",
@@ -191,7 +197,8 @@
       "languages": {
         "en": "English",
         "zh": "中文",
-        "tw": "繁體中文"
+        "tw": "繁體中文",
+        "ko": "한국어"
       },
       "features": {
         "community": "全球社群",
@@ -201,7 +208,7 @@
     }
   },
   "footer": {
-    "description": "MCP 教程网是一个专注于 MCP 协议的学习网站，提供 MCP 协议的详细介绍、示例代码和最佳实践。",
+    "description": "Claude MCP 教程網是一個專注於 Claude MCP 協議的學習網站，提供 Claude MCP 協議的詳細介紹、示例代碼和最佳實踐。",
     "copyright": "保留所有權利。",
     "sections": {
       "product": "產品",
@@ -710,8 +717,8 @@
     "learnMore": "了解更多"
   },
   "Servers": {
-    "title": "模型上下文協議伺服器目錄",
-    "description": "發現熱門的模型上下文協議伺服器",
+    "title": "Claude MCP 伺服器目錄",
+    "description": "發現最好最熱門的 Claude MCP 伺服器",
     "search": "搜尋...",
     "viewAll": "查看全部",
     "noServers": "未找到伺服器",

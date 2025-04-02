@@ -32,16 +32,16 @@ You can refer to the following workflow:
 ```mermaid
 graph TD
     A[Start] --> B[Client connects to MCP Server]
-    B --> C[Retrieve the list of tools provided by the server (including resources and prompts)]
-    C --> D[Send the client's input and tool list to the LLM]
-    D --> E[LLM returns a result]
-    E --> F{Does the result include tool calls?}
-    F -- Yes --> G[Extract tool names and parameters]
-    G --> H[Call MCP server tools]
-    H --> I[Get tool return results and new context]
-    I --> J[Send the result and context back to the LLM]
+    B --> C[Retrieve server tools list]
+    C --> D[Send input & tools to LLM]
+    D --> E[LLM returns result]
+    E --> F{Has tool calls?}
+    F -- Yes --> G[Extract tool details]
+    G --> H[Call MCP tools]
+    H --> I[Get results & context]
+    I --> J[Send back to LLM]
     J --> E
-    F -- No --> K[Return complete answer]
+    F -- No --> K[Return answer]
     K --> L[End]
 ```
 
@@ -160,9 +160,9 @@ if (!ANTHROPIC_BASE_URL) {
 Then, create a `MCPClient` class and initialize the MCP client and Anthropic client:
 
 ```typescript
-import { Client } from "@modelcontextprotocol.sdk/client/index.js";
+import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { Tool } from "@anthropic-ai/sdk/resources/messages/messages.mjs";
-import { StdioClientTransport } from "@modelcontextprotocol.sdk/client/stdio.js";
+import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
 import { Anthropic } from "@anthropic-ai/sdk";
 
 class MCPClient {

@@ -823,6 +823,8 @@
         "getting_started": "入門指南",
         "write-ts-server": "MCP 伺服器",
         "write-ts-client": "MCP 客戶端",
+        "use-llm-dev-mcp": "使用 Cursor/LLM 開發 MCP",
+        "dev-sse-mcp": "開發 SSE 類型的 MCP 服務",
         "resources": "資源管理",
         "tools": "工具使用",
         "messages": "訊息處理",

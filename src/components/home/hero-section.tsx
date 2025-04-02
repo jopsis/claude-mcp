@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link as I18nLink } from '@/i18n/routing';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
@@ -25,6 +25,9 @@ const item = {
 
 export function HeroSection() {
   const t = useTranslations('Index');
+  const locale = useLocale();
+
+  console.log(locale, locale === 'zh' || locale === 'tw');
 
   return (
     <motion.section 
@@ -80,12 +83,14 @@ export function HeroSection() {
                 <Book className="ml-2" />
               </Button>
             </I18nLink>
-            <Link href="https://fastclass.cn/course/mcp">
-              <Button variant="default" size="lg" className="h-12 px-6 text-base hover-card">
-                {t('hero.videoCourse')}
+            {(locale === 'zh' || locale === 'tw') && (
+              <Link href="https://fastclass.cn/course/mcp">
+                <Button variant="default" size="lg" className="h-12 px-6 text-base hover-card">
+                  {t('hero.videoCourse')}
                 <Video className="ml-2" />
-              </Button>
-            </Link>
+                </Button>
+              </Link>
+            )}
           </motion.div>
         </motion.div>
       </motion.div>

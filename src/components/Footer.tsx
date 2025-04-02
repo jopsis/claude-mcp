@@ -9,10 +9,12 @@ export function Footer() {
 
   const navigation = {
     product: [
-      { name: 'Fastclass', href: 'https://fastclass.cn' },
-      { name: 'JoyGames', href: 'https://www.joygames.io'},
-      { name: 'ToMarkdown', href: 'https://www.tomarkdown.org' },
-      { name: 'Manus AI', href: 'https://www.manusai.io' },
+      { name: 'Fastclass', href: 'https://fastclass.cn?ref=claude-mcp' },
+      { name: 'JoyGames', href: 'https://www.joygames.io?ref=claude-mcp' },
+      { name: 'ToMarkdown', href: 'https://www.tomarkdown.org?ref=claude-mcp' },
+      { name: 'Manus AI', href: 'https://www.manusai.io?ref=claude-mcp' },
+      { name: 'Ghibli AI', href: 'https://www.ghibli-ai.app?ref=claude-mcp' },
+      { name: 'AI Image Free', href: 'https://www.aiimagefree.com?ref=claude-mcp'},
     ],
     community: [
       { name: t('links.github'), href: 'https://github.com/modelcontextprotocol' },
@@ -41,7 +43,7 @@ export function Footer() {
                     <li key={item.name}>
                       <I18nLink
                         href={item.href as any}
-                        className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                        className={`text-sm text-muted-foreground hover:text-foreground transition-colors`}
                       >
                         {item.name}
                       </I18nLink>

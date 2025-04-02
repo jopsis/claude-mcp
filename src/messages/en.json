@@ -828,6 +828,8 @@
           "getting_started": "Getting Started",
           "write-ts-server": "MCP Server",
           "write-ts-client": "MCP Client",
+          "use-llm-dev-mcp": "Develop MCP with Cursor/LLM",
+          "dev-sse-mcp": "Develop an SSE MCP Service",
           "resources": "Resource Management",
           "tools": "Tools Usage",
           "messages": "Message Handling",

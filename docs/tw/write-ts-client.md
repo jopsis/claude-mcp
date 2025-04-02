@@ -162,9 +162,9 @@ if (!ANTHROPIC_BASE_URL) {
 接下來我們將創建一個 `MCPClient` 類，並初始化 MCP 客戶端和 Anthropic 客戶端：
 
 ```typescript
-import { Client } from "@modelcontextprotocol.sdk/client/index.js";
+import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { Tool } from "@anthropic-ai/sdk/resources/messages/messages.mjs";
-import { StdioClientTransport } from "@modelcontextprotocol.sdk/client/stdio.js";
+import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
 import { Anthropic } from "@anthropic-ai/sdk";
 
 class MCPClient {

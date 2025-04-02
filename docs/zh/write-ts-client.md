@@ -162,9 +162,9 @@ if (!ANTHROPIC_BASE_URL) {
 然后创建一个 `MCPClient` 类，并初始化 MCP 客户端和 Anthropic 客户端：
 
 ```typescript
-import { Client } from "@modelcontextprotocol.sdk/client/index.js";
+import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { Tool } from "@anthropic-ai/sdk/resources/messages/messages.mjs";
-import { StdioClientTransport } from "@modelcontextprotocol.sdk/client/stdio.js";
+import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
 import { Anthropic } from "@anthropic-ai/sdk";
 
 class MCPClient {

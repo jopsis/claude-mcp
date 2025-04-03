@@ -13,7 +13,9 @@ export const routing = defineRouting({
     '/specification': '/specification',
     '/community': '/community',
     '/servers': '/servers',
-    '/servers/[id]': '/servers/[id]'
+    '/servers/[id]': '/servers/[id]',
+    '/clients': '/clients',
+    '/clients/[id]': '/clients/[id]'
   },
   localePrefix: 'as-needed'
 })

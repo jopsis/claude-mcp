@@ -13,6 +13,8 @@ export const pathnames = {
   '/specification': '/specification',
   '/servers': '/servers',
   '/servers/[id]': '/servers/[id]',
+  '/clients': '/clients',
+  '/clients/[id]': '/clients/[id]'
 } as const
 
 export type Pathnames = typeof pathnames

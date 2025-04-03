@@ -17,8 +17,7 @@ export function ServerCard({ server }: { server: MCPServer }) {
 
   return (
     <Link href={{ pathname: '/servers/[id]', params: { id: server.id } }} className="group">
-      <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 sm:p-6 
-        shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+      <div className="p-6 duration-300 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md hover:scale-105 transition-all group">
         <div className="flex items-center justify-between">
           <div className="flex-1">
             <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 

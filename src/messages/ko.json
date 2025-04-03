@@ -2,6 +2,7 @@
     "nav": {
       "title": "Claude MCP",
       "servers": "서버 목록",
+      "clients": "클라이언트 목록",
       "documentation": "문서",
       "blog": "블로그",
       "specification": "프로토콜 사양",
@@ -740,7 +741,6 @@
     "Servers": {
       "title": "Claude MCP 서버 디렉토리",
       "description": "최고의 인기 있는 Claude MCP 서버 찾기",
-      "search": "검색...",
       "viewAll": "모두 보기",
       "noServers": "서버를 찾을 수 없습니다",
       "author": "작성자",
@@ -751,7 +751,7 @@
       "capabilities": "기능",
       "filterByTags": "태그로 필터링",
       "allTags": "전체",
-      "searchServers": "서버 검색",
+      "search": "서버 검색",
       "searchPlaceholder": "키워드 입력...",
       "serverDetails": "서버 세부 정보",
       "notFound": "서버를 찾을 수 없습니다",
@@ -861,5 +861,28 @@
           "configuration": "구성"
         }
       }
+    },
+    "Clients": {
+      "title": "Claude MCP 클라이언트",
+      "description": "모델 컨텍스트 프로토콜(Claude MCP)을 구현한 다양한 클라이언트 애플리케이션 탐색",
+      "details": "클라이언트 상세정보",
+      "noClients": "클라이언트를 찾을 수 없음",
+      "viewAll": "모든 클라이언트 보기",
+      "backToClients": "클라이언트 목록으로 돌아가기",
+      "author": "개발자",
+      "published": "출시일",
+      "platforms": "지원 플랫폼",
+      "visitHomepage": "홈페이지 방문",
+      "viewRepository": "코드 저장소 보기",
+      "platformWindows": "Windows",
+      "platformMac": "macOS",
+      "platformLinux": "Linux",
+      "platformWeb": "웹 버전",
+      "platformIos": "iOS",
+      "platformAndroid": "Android",
+      "notFound": "클라이언트를 찾을 수 없음",
+      "notFoundDescription": "요청한 클라이언트를 찾을 수 없습니다",
+      "search": "클라이언트 검색",
+      "searchPlaceholder": "키워드를 입력하여 검색..."
     }
   }

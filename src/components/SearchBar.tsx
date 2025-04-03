@@ -6,11 +6,11 @@ import { useTranslations } from 'next-intl';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 
-export function SearchBar() {
+export function SearchBar(props: { position: 'Servers' | 'Clients' }) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const t = useTranslations('Servers');
+  const t = useTranslations(props.position);
   const [keyword, setKeyword] = useState('');
   const [debouncedKeyword, setDebouncedKeyword] = useState('');
 
@@ -52,7 +52,7 @@ export function SearchBar() {
   return (
     <div className="w-full border-2 p-4 rounded-xl dark:border-gray-600 mx-auto space-y-4">
       <div>
-        <h3 className="text-lg font-medium mb-3 text-gray-700 dark:text-gray-300">{t('searchServers')}</h3>
+        <h3 className="text-lg font-medium mb-3 text-gray-700 dark:text-gray-300">{t('search')}</h3>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <Search className="h-5 w-5 text-gray-400" />

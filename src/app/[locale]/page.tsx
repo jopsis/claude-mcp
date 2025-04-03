@@ -6,10 +6,12 @@ import { ProtocolSection } from '@/components/home/protocol-section';
 import { IntegrationSection } from '@/components/home/integration-section';
 import { GlobalSection } from '@/components/home/global-section';
 import { FeaturedServers } from '@/components/home/featured-servers';
+import { FeaturedClients } from '@/components/home/featured-clients';
 import { LatestDocs } from '@/components/home/latest-docs';
-import { loadServersData } from '@/lib/data-utils';
+import { loadServersData, loadClientsData } from '@/lib/data-utils';
 import { getLatestDocs } from '@/lib/docs';
 import { locales } from '@/i18n/config';
+import type { MCPClient } from '@/types/client';
 
 // 设置静态生成和缓存
 export const revalidate = 3600; // 每小时重新验证
@@ -58,6 +60,11 @@ export default async function Home({ params }: PageProps) {
   // 加载精选服务器数据
   const { servers: featuredServers } = await loadServersData(locale, 6);
   
+  // 加载精选客户端数据
+  const { clients: featuredClients } = await loadClientsData(locale, 6, (client: MCPClient) => {
+    return client.featured === true;
+  });
+  
   // 加载最新文档
   const latestDocs = await getLatestDocs(locale, 6);
 
@@ -66,6 +73,7 @@ export default async function Home({ params }: PageProps) {
       <HeroSection />
       <LatestDocs docs={latestDocs} />
       <FeaturedServers servers={featuredServers} />
+      <FeaturedClients clients={featuredClients} />
       <OverviewSection />
       <ProtocolSection />
       <IntegrationSection />

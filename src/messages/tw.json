@@ -2,6 +2,7 @@
   "nav": {
     "title": "Claude MCP",
     "servers": "服務目錄",
+    "clients": "客戶端",
     "documentation": "文件",
     "blog": "部落格",
     "specification": "協議規範",
@@ -719,7 +720,6 @@
   "Servers": {
     "title": "Claude MCP 伺服器目錄",
     "description": "發現最好最熱門的 Claude MCP 伺服器",
-    "search": "搜尋...",
     "viewAll": "查看全部",
     "noServers": "未找到伺服器",
     "author": "作者",
@@ -730,7 +730,7 @@
     "capabilities": "功能",
     "filterByTags": "按標籤篩選",
     "allTags": "全部",
-    "searchServers": "搜尋伺服器",
+    "search": "搜尋伺服器",
     "searchPlaceholder": "輸入關鍵詞搜尋...",
     "serverDetails": "伺服器詳情",
     "notFound": "伺服器未找到",
@@ -840,5 +840,29 @@
         "configuration": "配置"
       }
     }
-  }
+  },
+  "Clients": {
+      "title": "Claude MCP 客戶端",
+      "description": "探索實現模型上下文協議（Claude MCP）的各種客戶端應用",
+      "details": "客戶端詳情",
+      "noClients": "未找到客戶端",
+      "viewAll": "查看所有客戶端",
+      "backToClients": "返回客戶端列表",
+      "author": "開發者",
+      "published": "發佈日期",
+      "platforms": "支援平台",
+      "visitHomepage": "訪問主頁",
+      "viewRepository": "查看程式碼儲存庫",
+      "platformWindows": "Windows",
+      "platformMac": "macOS",
+      "platformLinux": "Linux",
+      "platformWeb": "網頁版",
+      "platformIos": "iOS",
+      "platformAndroid": "Android",
+      "notFound": "未找到客戶端",
+      "notFoundDescription": "請求的客戶端未找到",
+      "search": "搜尋客戶端",
+      "searchPlaceholder": "輸入關鍵詞搜尋..."
+    }
+  
 }

@@ -41,6 +41,19 @@ export default function Navbar() {
                 {t('servers')}
               </I18nLink>
               <I18nLink 
+                href="/clients"
+                aria-label={t('clients')}
+                title={t('clients')}
+                className={cn(
+                  "inline-flex items-center px-1 pt-1 text-sm font-medium",
+                  path.startsWith('/clients')
+                    ? "text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400"
+                    : "text-gray-900 dark:text-gray-100 hover:text-gray-500 dark:hover:text-gray-400"
+                )}
+              >
+                {t('clients')}
+              </I18nLink>
+              <I18nLink 
                 href="/docs"
                 aria-label={t('documentation')}
                 title={t('documentation')}

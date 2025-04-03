@@ -1,7 +1,8 @@
 {
     "nav": {
       "title": "Claude MCP",
-      "servers": "服务目录",
+      "servers": "服务器",
+      "clients": "客户端",
       "documentation": "文档",
       "blog": "博客",
       "specification": "协议规范",
@@ -739,7 +740,6 @@
     "Servers": {
       "title": "Claude MCP 服务器目录",
       "description": "发现最好最热门的 Claude MCP 服务器",
-      "search": "搜索...",
       "viewAll": "查看全部",
       "noServers": "未找到服务器",
       "author": "作者",
@@ -750,7 +750,7 @@
       "capabilities": "功能",
       "filterByTags": "按标签筛选",
       "allTags": "全部",
-      "searchServers": "搜索服务器",
+      "search": "搜索服务器",
       "searchPlaceholder": "输入关键词搜索...",
       "serverDetails": "服务器详情",
       "notFound": "服务器未找到",
@@ -860,5 +860,28 @@
           "configuration": "配置"
         }
       }
+    },
+    "Clients": {
+      "title": "Claude MCP 客户端",
+      "description": "探索实现模型上下文协议（Claude MCP）的各种客户端应用",
+      "details": "客户端详情",
+      "noClients": "未找到客户端",
+      "viewAll": "查看所有客户端",
+      "backToClients": "返回客户端列表",
+      "author": "开发者",
+      "published": "发布日期",
+      "platforms": "支持平台",
+      "visitHomepage": "访问主页",
+      "viewRepository": "查看代码仓库",
+      "platformWindows": "Windows",
+      "platformMac": "macOS",
+      "platformLinux": "Linux",
+      "platformWeb": "网页版",
+      "platformIos": "iOS",
+      "platformAndroid": "Android",
+      "notFound": "未找到客户端",
+      "notFoundDescription": "请求的客户端未找到",
+      "search": "搜索客户端",
+      "searchPlaceholder": "输入关键词搜索..."
     }
   }

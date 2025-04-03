@@ -14,7 +14,6 @@ export function Footer() {
       { name: 'ToMarkdown', href: 'https://www.tomarkdown.org?ref=claude-mcp' },
       { name: 'Manus AI', href: 'https://www.manusai.io?ref=claude-mcp' },
       { name: 'Ghibli AI', href: 'https://www.ghibli-ai.app?ref=claude-mcp' },
-      { name: 'AI Image Free', href: 'https://www.aiimagefree.com?ref=claude-mcp'},
     ],
     community: [
       { name: t('links.github'), href: 'https://github.com/modelcontextprotocol' },

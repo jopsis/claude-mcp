@@ -2,6 +2,7 @@
   "nav": {
     "title": "Claude MCP Tutorial",
     "servers": "Server Directory",
+    "clients": "Client Directory",
     "documentation": "Documentation",
     "blog": "Blog",
     "specification": "Protocol Specification",
@@ -724,7 +725,6 @@
   "Servers": {
     "title": "Claude MCP Server Directory",
     "description": "Discover the best and most popular claude mcp servers",
-    "search": "Search...",
     "viewAll": "View All",
     "noServers": "No servers found",
     "author": "Author",
@@ -735,7 +735,7 @@
     "capabilities": "Capabilities",
     "filterByTags": "Filter by Tags",
     "allTags": "All",
-    "searchServers": "Search Servers",
+    "search": "Search Servers",
     "searchPlaceholder": "Enter keywords to search...",
     "serverDetails": "Server Details",
     "notFound": "Server Not Found",
@@ -845,5 +845,28 @@
           "configuration": "Configuration"
         }
       }
+    },
+  "Clients": {
+      "title": "MCP Clients",
+      "description": "Explore various client applications implementing the Model Context Protocol (MCP)",
+      "details": "Client Details",
+      "noClients": "No clients found",
+      "viewAll": "View All Clients",
+      "backToClients": "Back to Clients List",
+      "author": "Developer",
+      "published": "Publication Date",
+      "platforms": "Supported Platforms",
+      "visitHomepage": "Visit Homepage",
+      "viewRepository": "View Repository",
+      "platformWindows": "Windows",
+      "platformMac": "macOS",
+      "platformLinux": "Linux",
+      "platformWeb": "Web",
+      "platformIos": "iOS",
+      "platformAndroid": "Android",
+      "notFound": "Client Not Found",
+      "notFoundDescription": "The requested client was not found",
+      "search": "Search Clients",
+      "searchPlaceholder": "Enter keywords to search..."
     }
 }

@@ -677,6 +677,21 @@ Here is an example of using the web client we developed:
 
 ![](/images/shop-ai-with-mcp-web2.png)
 
+## Debugging
+
+We can use the `npx @modelcontextprotocol/inspector` command to debug our SSE service:
+
+```bash
+$ npx @modelcontextprotocol/inspector
+Starting MCP inspector...
+⚙️ Proxy server listening on port 6277
+🔍 MCP Inspector is up and running at http://127.0.0.1:6274 🚀
+```
+
+Then o8pen the above address in the browser, select SSE, and configure our SSE address to test:
+
+![](/images/shop-ai-with-mcp-inspector.png)
+
 ## Summary
 
 When LLM decides to trigger a tool call for a user, the quality of tool descriptions is crucial:

@@ -863,6 +863,32 @@
       "notFoundDescription": "請求的客戶端未找到",
       "search": "搜尋客戶端",
       "searchPlaceholder": "輸入關鍵詞搜尋..."
+    },
+    "Blog": {
+      "common": {
+        "searchPlaceholder": "搜尋文章...",
+        "allCategories": "全部分類",
+        "noResults": "未找到符合條件的文章",
+        "readMore": "閱讀更多",
+        "backToBlog": "返回博客列表",
+        "shareArticle": "分享這篇文章",
+        "copyLink": "複製連結",
+        "linkCopied": "連結已複製到剪貼板",
+        "relatedPosts": "相關文章",
+        "scrollToTop": "返回頂部",
+        "readingTime": "閱讀時間",
+        "minutesRead": "分鐘閱讀",
+        "tableOfContents": "目錄",
+        "loadingToc": "正在加載目錄..."
+      },
+      "meta": {
+        "title": "博客",
+        "description": "探索我們關於技術、AI、編程和最佳實踐的最新文章和見解"
+      },
+      "page": {
+        "title": "博客洞見",
+        "description": "探索我們關於技術、人工智能、編程和最佳實踐的最新文章和見解，幫助您構建更智能的應用"
+      }
     }
   
 }

@@ -2,14 +2,18 @@
 
 import React from "react";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { remark } from "remark";
 import html from "remark-html";
 import { Markdown } from "@/components/ui/markdown";
 import type { MCPServer } from "@/types/server";
 import { Breadcrumb } from '@/components/ui/breadcrumb';
 import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
+
 
 export function ServerDetails({ server }: { server: MCPServer }) {
+  const { locale } = useParams();
   const t = useTranslations('Servers');
   const [content, setContent] = useState("");
 
@@ -61,24 +65,25 @@ export function ServerDetails({ server }: { server: MCPServer }) {
             </p>
             <div className="flex flex-wrap gap-2 mt-6">
               {server.tags.map((tag) => (
-                <span
+                <Link
                   key={tag}
+                  href={`/${locale}/servers?tags=${tag}`}
                   className="px-3 py-1 bg-white/80 dark:bg-gray-700/80 rounded-full text-sm font-medium
                     text-gray-700 dark:text-gray-300"
                 >
                   {tag}
-                </span>
+                </Link>
               ))}
             </div>
           </div>
           {server.icon ? (
             <div
-              className="flex-shrink-0 ml-4 w-16 h-16 p-2 rounded-full flex items-center justify-center bg-white dark:bg-gray-700 shadow-sm"
+              className="flex-shrink-0 ml-4 w-16 h-16 p-1 rounded-full flex items-center justify-center bg-white dark:bg-gray-700 shadow-sm overflow-hidden"
             >
               <img 
                 src={server.icon} 
                 alt={server.name}
-                className="w-16 h-16 rounded-full object-cover"
+                className="w-full h-full object-cover rounded-full"
               />
             </div>
           ) : (

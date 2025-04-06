@@ -646,6 +646,21 @@ apiRouter.post("/chat", async (req, res) => {
 
 ![](/images/shop-ai-with-mcp-web2.png)
 
+## 調試
+
+同樣我們可以使用 `npx @modelcontextprotocol/inspector` 命令來調試我們的 SSE 服務：
+
+```bash
+$ npx @modelcontextprotocol/inspector
+Starting MCP inspector...
+⚙️ Proxy server listening on port 6277
+🔍 MCP Inspector is up and running at http://127.0.0.1:6274 🚀
+```
+
+然後在瀏覽器中打開上面地址即可，選擇 SSE，配置上我們的 SSE 地址即可測試：
+
+![](/images/shop-ai-with-mcp-inspector.png)
+
 ## 總結
 
 當 LLM 決定觸發對用戶工具的調用時，工具描述的質量至關重要：

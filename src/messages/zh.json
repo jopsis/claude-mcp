@@ -22,6 +22,32 @@
         "configuration": "配置"
       }
     },
+    "Blog": {
+      "common": {
+        "searchPlaceholder": "搜索文章...",
+        "allCategories": "全部分类",
+        "noResults": "未找到符合条件的文章",
+        "readMore": "阅读更多",
+        "backToBlog": "返回博客列表",
+        "shareArticle": "分享这篇文章",
+        "copyLink": "复制链接",
+        "linkCopied": "链接已复制到剪贴板",
+        "relatedPosts": "相关文章",
+        "scrollToTop": "返回顶部",
+        "readingTime": "阅读时间",
+        "minutesRead": "分钟阅读",
+        "tableOfContents": "目录",
+        "loadingToc": "正在加载目录..."
+      },
+      "meta": {
+        "title": "博客",
+        "description": "探索我们关于技术、AI、编程和最佳实践的最新文章和见解"
+      },
+      "page": {
+        "title": "博客洞见",
+        "description": "探索我们关于技术、人工智能、编程和最佳实践的最新文章和见解，帮助您构建更智能的应用"
+      }
+    },
     "home": {
       "title": "全球技术社区",
       "description": "Anthropic MCP协议文档、开发者资源和社区协作的首选平台。",

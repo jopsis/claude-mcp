@@ -677,6 +677,21 @@ apiRouter.post("/chat", async (req, res) => {
 
 ![](/images/shop-ai-with-mcp-web2.png)
 
+## 디버깅
+
+우리는 `npx @modelcontextprotocol/inspector` 명령을 사용하여 SSE 서비스를 디버깅할 수 있습니다:
+
+```bash
+$ npx @modelcontextprotocol/inspector
+Starting MCP inspector...
+⚙️ Proxy server listening on port 6277
+🔍 MCP Inspector is up and running at http://127.0.0.1:6274 🚀
+```
+
+그런 다음 브라우저에서 위 주소를 열고, SSE를 선택하고, 우리의 SSE 주소를 구성하여 테스트할 수 있습니다:
+
+![](/images/shop-ai-with-mcp-inspector.png)
+
 ## 요약
 
 LLM이 사용자에게 도구 호출을 트리거하기로 결정하면 도구 설명의 품질이 중요합니다:

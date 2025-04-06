@@ -1,12 +1,26 @@
 {
   "nav": {
-    "title": "Claude MCP Tutorial",
-    "servers": "Server Directory",
-    "clients": "Client Directory",
+    "title": "Claude MCP",
+    "servers": "Servers",
+    "clients": "Clients",
     "documentation": "Documentation",
     "blog": "Blog",
-    "specification": "Protocol Specification",
-    "community": "Community"
+    "specification": "Specification",
+    "community": "Community",
+    "getting_started": "Getting Started",
+    "guides": "Guides",
+    "advanced": "Advanced Topics",
+    "items": {
+      "introduction": "Introduction",
+      "installation": "Installation",
+      "quick_start": "Quick Start",
+      "resources": "Resources",
+      "tools": "Tools",
+      "messages": "Messages",
+      "security": "Security",
+      "deployment": "Deployment",
+      "configuration": "Configuration"
+    }
   },
   "home": {
     "title": "Global Tech Community",
@@ -868,5 +882,31 @@
       "notFoundDescription": "The requested client was not found",
       "search": "Search Clients",
       "searchPlaceholder": "Enter keywords to search..."
+    },
+  "Blog": {
+    "common": {
+      "searchPlaceholder": "Search articles...",
+      "allCategories": "All Categories",
+      "noResults": "No articles found matching your criteria",
+      "readMore": "Read more",
+      "backToBlog": "Back to blog list",
+      "shareArticle": "Share this article",
+      "copyLink": "Copy link",
+      "linkCopied": "Link copied to clipboard",
+      "relatedPosts": "Related articles",
+      "scrollToTop": "Back to top",
+      "readingTime": "Reading time",
+      "minutesRead": "min read",
+      "tableOfContents": "Table of contents",
+      "loadingToc": "Loading table of contents..."
+    },
+    "meta": {
+      "title": "Blog",
+      "description": "Explore our latest articles and insights about technology, AI, programming, and best practices"
+    },
+    "page": {
+      "title": "Blog Insights",
+      "description": "Explore our latest articles and insights about technology, artificial intelligence, programming, and best practices to help you build smarter applications"
     }
+  }
 }

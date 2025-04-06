@@ -54,7 +54,15 @@ export default function LanguageSwitcher() {
         params: { id: id! }
       }
     }
-    
+
+    // 检查是否是 /blog/xxx 格式的路径
+    if (path.startsWith('/blog/') && path !== '/blog') {
+      const slug = path.split('/').pop()
+      return {
+        pathname: '/blog/[slug]' as keyof Pathnames,
+        params: { slug: slug! }
+      }
+    }
     // 其他标准路径
     if (pathnames[path as keyof typeof pathnames]) {
       return {

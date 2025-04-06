@@ -1,6 +1,7 @@
 import { locales } from "@/i18n/config";
 import { MetadataRoute } from "next";
 import { loadServersData } from "@/lib/data-utils";
+import { getBlogPosts } from '@/data/blog-posts';
 import { readdir } from 'fs/promises';
 import path from 'path';
 import type { DocMeta } from "@/lib/docs";
@@ -93,6 +94,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
   );
 
+  // 生成博客页面 URLs
+  const blogPosts = await getBlogPosts();
+  const blogUrls = locales.flatMap((locale) =>
+    blogPosts.map((post) => ({
+        url:
+          locale === "en"
+            ? `${baseUrl}/blog/${post.slug}`
+            : `${baseUrl}/${locale}/blog/${post.slug}`,
+        lastModified: new Date(post.date),
+        changeFrequency: "weekly" as const,
+        priority: 0.8,
+      }))
+  );
+
   // 生成其他静态页面 URLs
   const staticUrls = locales.flatMap((locale) => [
     {
@@ -115,5 +130,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...serverDetailUrls,
     ...docUrls,
     ...staticUrls,
+    ...blogUrls,
   ];
 }

@@ -146,9 +146,9 @@ export async function loadServerDetail(locale: string, id: string): Promise<MCPS
         repository: data.repository,
         createTime: data.createTime || new Date().toISOString(),
         capabilities: {
-          resources: data.resources === true,
-          tools: data.tools === true,
-          prompts: data.prompts === true,
+          resources: data.capabilities.resources === true,
+          tools: data.capabilities.tools === true,
+          prompts: data.capabilities.prompts === true,
         },
         tags: tags,
       };
